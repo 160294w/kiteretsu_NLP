@@ -9,15 +9,17 @@ def token2genshigo(token):
     else:
         return token.reading
 
-
-if __name__ == '__main__':
+def start(input_str):
     tokenizer = Tokenizer()
     # input_str = "肉を食べよう！"
-    input_str = "これでみんなで原始人。肉を食べよう！"
     # 形態素解析の実施
     tokens = tokenizer.tokenize(input_str)
     result_str = ""
     for token in tokens:
         result_str += token2genshigo(token) + ""
-    print(result_str)
+    return(result_str)
+
+
+if __name__ == '__main__':
+    print(start("これでみんなで原始人。肉を食べよう！"))
     
